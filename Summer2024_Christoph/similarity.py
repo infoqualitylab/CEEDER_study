@@ -1,6 +1,6 @@
 import requests
-import csv
 import json
+from csv import DictReader
 
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -11,35 +11,17 @@ from wordcloud import WordCloud
 
 # 1. Data retrieval
 
-sources = {
-    "scopus": f'https://api.elsevier.com/content/article/doi/', # ... ?apiKey={API_KEY}' # + &httpAccept=text%2Fplain'
-    "open_alex": f'https://api.openalex.org/works?filter=doi:', # https://github.com/ourresearch/openalex-api-tutorials/blob/main/notebooks/openalex_works/openalex_works.ipynb
-    # "web_of_science": f'' 
-    # https://github.com/clarivate/wos_api_usecases/blob/main/citations_from_patents/main.py
-    # https://libguides.csiro.au/TDM/API/WebofScience
-}
-
-api_keys = {
-    "scopus": '...', # From Ishita's git
-    "open_alex": '', # It's open!
-    # "web_of_science": f'' # tbd
-}
-
-# Try out different sources if review unavailabe
-# for source in sources.values():
-#     pass
-
 # Structure: [{ "title": "abc", "doi": 123, "question": "abc?", "references": [ 1, 2, 3 ] }, { ... }]
-review_meta_mappings = []
+reviews = [] # TODO: Rename. Not really a mapping. Outermost data structure is a list...
 
 # Extract review DOIs from CEEDER csv dump
-with open('./CEEDER_reviews_climate_collection', "r", encoding="UTF-8") as csvfile:
-    reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
+with open('./CEEDER_reviews_climate_collection.csv', "r", encoding="UTF-8") as csvfile:
+    reader = DictReader(csvfile, delimiter=',', quotechar='"')
 
     for row in reader:
         try:
-            review_meta_mappings.append({
-                "question": row.get("Title"),
+            reviews.append({
+                "title": row.get("Title"),
                 "doi": row.get("Link").split(">")[1].split("<")[0], # Extract DOI from inbetween 2 HTML tags
                 "question": row.get("Review Question")
             })
@@ -50,11 +32,9 @@ with open('./CEEDER_reviews_climate_collection', "r", encoding="UTF-8") as csvfi
 
 broken_dois = []
 empty_references = []
+review_with_references = []
 
-# TODO: Do this more elegantly? pop() has a lot of ugly consequences, that need to be worked around...
-for review_copy in review_meta_mappings.copy(): # Iterate copy, because of pop() operation
-    i = review_meta_mappings.index(review_copy) # Make i dynamic, because of changing length of list through pop() operation
-    review = review_meta_mappings[i]
+for review in reviews: 
     doi = review["doi"]
     response = requests.get(f'https://api.openalex.org/works?filter=doi:{doi}')
 
@@ -62,25 +42,25 @@ for review_copy in review_meta_mappings.copy(): # Iterate copy, because of pop()
         content_type = response.headers['Content-Type']
     else:
         print(f"Error: Failed to retrieve full text. Status code: {response.status_code}")
-        
-    # Embed citation wenns sein muss, kann auch mit komplettem query string arbeiten...
-    # For now work with 
 
-    results = json.loads(response.text)["results"]
+    response_text = json.loads(response.text)
 
-    if results == []:
+    if not response_text.get("results") or response_text["results"] == []:
         broken_dois.append(doi)
-        review_meta_mappings.pop(i) # Remove review with faulty meta
         continue 
 
-    references = results[0]["referenced_works"]
+    references = response_text["results"][0]["referenced_works"]
 
     if references == []:
         empty_references.append(doi)
-        review_meta_mappings.pop(i) # Remove review with faulty meta
         continue
 
-    review["references"] = references
+    review_with_references.append({
+        "title": review.get("title"),
+        "doi": review.get("doi"),
+        "question": review.get("question"),
+        "references": references
+    })
 
 # TODO: To be investigated
 # -> Muss ich mir mal genauer anschauen warum die kaputt sind, und ob ich da was machen kann
@@ -92,9 +72,9 @@ print(empty_references)
 
 similarity_edge_list = []
 
-for i, review_A in enumerate(review_meta_mappings):
+for i, review_A in enumerate(review_with_references):
     # Optimization: Skip reflection and symmetry (self and items that have already seen each other)
-    for review_B in review_meta_mappings[i+1:]:
+    for review_B in z[i+1:]:
         references_A = review_A["references"]
         references_B = review_B["references"]
         
@@ -183,7 +163,7 @@ for community in communities:
 # Was ist falsch mit der wordcloud: carbon viel oefter als organic (auch andere woerter dazwischen)
 # aber beide am groessten dargestellt
 # oder "soil organic" ??
-
+# oder "rate?What"
 
 
 nx.draw(G, width=edge_width*100)
