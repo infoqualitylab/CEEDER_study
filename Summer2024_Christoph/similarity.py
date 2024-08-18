@@ -1,8 +1,11 @@
+from string import punctuation
 from pathlib import Path
 from json import loads
 
 from data_retrieval import get_review_meta_data
 
+import nltk
+from nltk.corpus import stopwords
 import networkx as nx
 import matplotlib.pyplot as plt
 import hvplot.networkx as hvnx
@@ -59,6 +62,7 @@ node_color = [i for i, comm in enumerate(communities) for node in comm]
 
 # Analysis of communitites
 
+nltk.download('stopwords')
 community_keywords = []
 
 for community in communities:
@@ -66,26 +70,22 @@ for community in communities:
 
     # NOTE: Only works since node label is defined as question above !
     for question in community:
-        # question = question.removeprefix("What is the effect of")
-        # question = question.removeprefix("What are the effects of")
-        # question = question.removeprefix("How effective is")
-        # question = question.removeprefix("How effective are")
+        question = question.lower()
+        
+        for char in punctuation:
+            question = question.replace(char, '')
+    
+        # TODO: Further word simplification
+        # - singular and plural
+        # - word stem verbs
 
-        import nltk
-        from nltk.corpus import stopwords
-
-        nltk.download('stopwords')
         cachedStopWords = stopwords.words("english")
-        unique_string += ' '.join([word for word in question.split() if word not in cachedStopWords])
 
-        # unique_string += question \
-        #     .replace("?", "") \
-        #     .replace(",", "") \
-        #     .replace("(", "") \
-        #     .replace(")", "") \
-        #     .replace(";", "") \
-        #     .replace(":", "") + " "
-
+        # TODO: How can I find out these "uninteresting" words 
+        for word in ["impact", "exposure", "effect", "effects", "effective", "effectiveness"]:
+            cachedStopWords.append(word)
+        
+        unique_string += ' '.join([word for word in question.split() if word not in cachedStopWords]) + ' '
 
     d = {}
     for keyword in unique_string.split(" "):
@@ -109,8 +109,7 @@ for community in communities:
 # oder "soil organic" ??
 # oder "rate?What"
 
-
-nx.draw(G, width=edge_width*100)
+# nx.draw(G, width=edge_width*100)
 # nx.draw(G, node_size=node_sizes)
 # nx.draw(G, width=edge_width, node_size=node_sizes)
 # hvnx.draw(G, with_labels=True)
@@ -120,10 +119,7 @@ nx.draw(G, width=edge_width*100)
 # plt.show()
 
 # hvnx.draw(G, node_color=node_color, width=edge_width, node_size=8, alpha=0.5)
-plt.show()
-
-pass
-
+# plt.show()
 
 # Random Geometric Graph
 # https://hvplot.holoviz.org/user_guide/NetworkX.html#random-geometric-graph
