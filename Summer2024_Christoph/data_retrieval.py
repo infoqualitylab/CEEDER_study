@@ -82,7 +82,7 @@ def get_review_meta_data():
     #   "funders": [ 1, 2, ... ] }, 
     #   { ... }
     # }]
-    reviews = [] # TODO: Rename. Not really a mapping. Outermost data structure is a list...
+    reviews = [] 
 
     # Extract review DOIs from CEEDER csv dump
     with open('./CEEDER_reviews_climate_collection.csv', "r", encoding="UTF-8") as csvfile:

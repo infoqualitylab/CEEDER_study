@@ -28,6 +28,5 @@ funders_df = pd.DataFrame(
 
 df = px.data.tips() 
   
-# fig = px.sunburst(df, path=['day', 'sex'], values='total_bill') 
 fig = px.sunburst(funders_df, path=['fundingBodyType', 'region', 'name']) 
 fig.show()

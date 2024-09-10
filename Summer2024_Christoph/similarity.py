@@ -8,8 +8,9 @@ import nltk
 from nltk.corpus import stopwords
 import networkx as nx
 import igraph as ig
+from mycolorpy import colorlist as mcp
 import matplotlib.pyplot as plt
-# import hvplot.networkx as hvnx
+import hvplot.networkx as hvnx
 from networkx.algorithms.community import louvain_communities
 from wordcloud import WordCloud
 import numpy as np
@@ -17,17 +18,30 @@ from PIL import Image
 import leidenalg as la
 
 
-if not Path("./review_with_references.json").is_file():
+if not Path("./reviews_with_meta_data.json").is_file():
     get_review_meta_data() 
 
-with open("./review_with_references.json") as file:
-    review_with_references = loads(file.read()) # 340 reviews; 16 with either broken DOIs or empty references
+with open("./reviews_with_meta_data.json") as file:
+    reviews_with_meta_data = loads(file.read()) # 340 reviews; 16 with either broken DOIs or empty references
+
+# Citation ranking of studies
+ranking = {}
+
+for review in reviews_with_meta_data:
+    for study in review["references"]:
+        if ranking.get(study):
+            ranking[study] += 1
+        else:
+            ranking[study] = 1
+
+# Top 5 most influental/cited studies
+print(list(dict(sorted(ranking.items(), key=lambda item: -item[1])).items())[:5])
 
 similarity_edge_list = []
 
-for i, review_A in enumerate(review_with_references):
+for i, review_A in enumerate(reviews_with_meta_data):
     # Optimization: Skip reflection and symmetry (self and items that have already seen each other)
-    for review_B in review_with_references[i+1:]:
+    for review_B in reviews_with_meta_data[i+1:]:
         references_A = review_A["references"]
         references_B = review_B["references"]
         
@@ -50,7 +64,7 @@ print(f"Mean similarity over greater 0: {sum(edge[2] for edge in similarity_edge
 print(f"Mean similarity over all: {sum(edge[2] for edge in similarity_edge_list) / len([edge for edge in similarity_edge_list])}")
 
 G = nx.Graph()
-similarity_edge_list = sorted(similarity_edge_list, key=lambda x: x[0]["doi"]) # sort by doi to make sure input for graph drawing always looks the same (deterministic)
+similarity_edge_list = sorted(similarity_edge_list, key=lambda x: x[0]["doi"]) # Sort by doi to make sure input for graph drawing always looks the same (deterministic)
 
 for n1, n2, w in similarity_edge_list:
     # Show edge only if some similarity exists
@@ -63,6 +77,17 @@ G_igraph = ig.Graph.from_networkx(G)
 degree_dict = dict(G.degree())
 node_sizes = [degree * 2 for node, degree in degree_dict.items()]
 edge_width = [G[u][v]['weight'] * 17 for u, v in G.edges()]
+
+communities = la.find_partition(G_igraph, la.RBERVertexPartition, seed=42)
+node_color = [i for i, com in enumerate(communities) for node in com]
+
+# plt.clf()
+# hvnx.draw(G, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5, with_labels=True)
+# plt.show()
+# plt.clf()
+# hvnx.draw(G, post=nx.spring_layout, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5, with_labels=True)
+# plt.show()
+
 
 # Node positions
 layouts = {
@@ -101,7 +126,6 @@ leiden_partitions = {
 
 PATH = "C:/Users/chris/Documents/ObsidianVault/prof/files/PNG/graphs/"
 
-
 for layout_name, layout_func in layouts.items():
     for community_algorithm_name, community_algorithm_func in {"louvain": louvain_communities, "leiden": la.find_partition}.items():
             pos = layout_func(G, seed=42) # With seed to make deterministic
@@ -111,26 +135,34 @@ for layout_name, layout_func in layouts.items():
                 for partition_type_name, partition_type_class in leiden_partitions.items():
                     # Per Docstring:  .. warning:: This method is not suitable for weighted graphs.
                     if partition_type_class is la.SignificanceVertexPartition:
-                        communities = community_algorithm_func(G_igraph, partition_type_class)
+                        if len(community_algorithm_func(G_igraph, partition_type_class, seed=42)) == 340:
+                            continue # Disregard individual communities for every node
+                        communities = community_algorithm_func(G_igraph, partition_type_class, seed=42)
                     else:
-                        communities = community_algorithm_func(G_igraph, partition_type_class, weights="weight")
+                        if len(community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)) == 340:
+                            continue # Disregard individual communities for every node
+                        communities = community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)
 
                     # Convert the partition to a list of dictionaries, readable by networkx
                     # TODO: Comfirm that this really does what I expect it to
                     communities = [set({G_igraph.vs[node_id]["_nx_name"] for node_id, com_id in enumerate(communities.membership) if com_id == community_id}) for community_id, _ in enumerate(communities)]
                     node_color = [i for i, com in enumerate(communities) for node in com]
 
-                    nx.draw(G, pos=pos, node_color=node_color, width=edge_width, node_size=8, alpha=0.5)
+                    nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
+                    # nx.draw(G, pos=pos, node_color=node_color, cmap='viridis', vmin=0, vmax=10, width=edge_width, node_size=8, alpha=0.5)
                     plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}_{partition_type_name}.png", format="PNG")
                     plt.clf()
             else:
-                communities = community_algorithm_func(G, weight="weight")
+                if len(community_algorithm_func(G, weight="weight", seed=42)) == 340:
+                    continue # Disregard individual communities for every node
+
+                communities = community_algorithm_func(G, weight="weight", seed=42)
                 node_color = [i for i, com in enumerate(communities) for node in com]
 
-                nx.draw(G, pos=pos, node_color=node_color, width=edge_width, node_size=8, alpha=0.5)
+                nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
+                # nx.draw(G, pos=pos, node_color=node_color, cmap='viridis', vmin=0, vmax=10, width=edge_width, node_size=8, alpha=0.5)
                 plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}.png", format="PNG") # bbox_inches='tight'
-                plt.clf()
-                # hvnx.draw(G, node_color=node_color, width=edge_width, node_size=8, alpha=0.5, with_labels=True)
+                plt.clf()                
 
 # igraph
 # # colors = [plt.cm.rainbow(mem / float(max(communities_with_weighting.membership))) for mem in communities_with_weighting.membership]
@@ -139,7 +171,7 @@ for layout_name, layout_func in layouts.items():
 # ig.plot(G, layout=layout, edge_width=edge_width, vertex_size=8, target='graph.png')
 # Save
 # ig.plot(G, f"{path}graph{}{}.png")
-            
+    
 
 # VISUALIZATION OPTIONS
 # nx.draw(G, pos, with_labels=True)
@@ -187,6 +219,8 @@ nltk.download('stopwords')
 community_keywords = []
 wordcloud_paths = []
 
+hex_colors = mcp.gen_color(cmap="dark2",n=len(communities))
+
 for i, community in enumerate(communities):
     unique_string = ""
 
@@ -217,13 +251,27 @@ for i, community in enumerate(communities):
 
     # print(ranked)
 
+    import matplotlib.pyplot as plt
+    import matplotlib.colors as colors
+  
+    # Hex to cmap
+    rgb = colors.to_rgb(hex_colors[i])
+    
+    # Create a colormap with the specified color as the starting and ending color
+    cmap = colors.LinearSegmentedColormap.from_list(
+        name='custom_cmap',
+        colors=[rgb, rgb],
+        N=256
+    )
+        
     # Wordcloud per community
-    wordcloud = WordCloud(width = 1000, height = 500).generate(unique_string)
+    wordcloud = WordCloud(width = 1000, height = 500, background_color="white", colormap=cmap).generate(unique_string)
+    # background_color="white"
     plt.figure(figsize=(15,8))
     plt.imshow(wordcloud)
     plt.axis("off")
-    plt.savefig("wordcloud_" + str(i) +".png", bbox_inches='tight')
-    wordcloud_paths.append("wordcloud_" + str(i) +".png")
+    plt.savefig("wordcloud_" + str(i) + "_" + str(len(community)) +".png", bbox_inches='tight')
+    wordcloud_paths.append("wordcloud_" + str(i) + "_" + str(len(community)) +".png")
     # plt.show()
     # plt.close()
 
@@ -248,7 +296,6 @@ for i in range(X):
 grid_img = Image.fromarray(grid)
 grid_img.save("./wordcloud_grid.png")
 
-
-# TODO
-# - set seed
-# - consesus clustering
+# TODO:CS:
+# - This file needs a cleanup!
+#   (running it will not reproduce all findings of METSTI)
