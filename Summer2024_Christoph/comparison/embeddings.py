@@ -1,6 +1,9 @@
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
 from string import punctuation
 from pathlib import Path
-from json import loads
+from json import dumps, loads
 
 from data_retrieval import get_review_meta_data
 
@@ -10,12 +13,30 @@ import networkx as nx
 import igraph as ig
 from mycolorpy import colorlist as mcp
 import matplotlib.pyplot as plt
-import hvplot.networkx as hvnx
 from networkx.algorithms.community import louvain_communities
 from wordcloud import WordCloud
 import numpy as np
 from PIL import Image
 import leidenalg as la
+
+
+# research_questions = [
+#     "How does climate change impact biodiversity?", 
+#     "How does climate change impact fauna?", 
+#     "How is fauna impacted by the change in climate?", 
+#     "What is the weather going to be like tomorrow?"
+# ]
+#
+# [1.0000002  0.8714391  0.832276   0.25206238]
+# [0.8714391  1.0000002  0.96776915 0.27055174]
+# [0.832276   0.96776915 0.9999999  0.27489406]
+# [0.25206238 0.27055174 0.27489406 1.        ]
+# -> Looks plausible! Every question compared to itself is effectively valued 1 (Matrix diagonal)
+#    2,3 which ar paraphrased also close to 1 
+#    1-3 only vary in a single word also close to 1
+#    4 smallest similarity since it's unrelated
+#   => Worth investigating more complex (nuanced) questions
+#    
 
 
 if not Path("./reviews_with_meta_data.json").is_file():
@@ -24,52 +45,47 @@ if not Path("./reviews_with_meta_data.json").is_file():
 with open("./reviews_with_meta_data.json") as file:
     reviews_with_meta_data = loads(file.read()) # 340 reviews; 16 with either broken DOIs or empty references
 
-# Citation ranking of studies
-ranking = {}
 
-for review in reviews_with_meta_data:
-    for study in review["references"]:
-        if ranking.get(study):
-            ranking[study] += 1
-        else:
-            ranking[study] = 1
+research_questions = [review["question"] for review in reviews_with_meta_data]
 
-# Top 5 most influental/cited studies
-print(list(dict(sorted(ranking.items(), key=lambda item: -item[1])).items())[:5])
+model_all = SentenceTransformer('all-MiniLM-L6-v2')
+embeddings_all = model_all.encode(research_questions)
+similarity_matrix_all = cosine_similarity(embeddings_all)
 
-similarity_edge_list = []
 
-for i, review_A in enumerate(reviews_with_meta_data):
-    # Optimization: Skip reflection and symmetry (self and items that have already seen each other)
-    for review_B in reviews_with_meta_data[i+1:]:
-        references_A = review_A["references"]
-        references_B = review_B["references"]
-        
-        # Jaccard-Formula
-        intersection = len(list(set(references_A).intersection(references_B)))
-        union = (len(set(references_A)) + len(set(references_B))) - intersection
-        
-        # Compute similarity metric
-        similarity = float(intersection) / union
+similarity_pairs = []
+similarity_pairs_all = []
 
-        similarity_edge_list.append(
-            (
-                review_A, # Node A
-                review_B, # Node B
-                similarity # Weight
-            )
-        )
+# Reconstruct pairs by going over indices, not the cleanest...
+for i1, review in enumerate(similarity_matrix_all):
+    # Skip/discard reflexive pair and one of the two summetrical pairs (redundant)
+    for i2, sim in enumerate(review[i1 + 1:]): # NOTE: This expects some sorting; if its not there this will lose information !
 
-print(f"Mean similarity over greater 0: {sum(edge[2] for edge in similarity_edge_list if edge[2] > 0) / len([edge for edge in similarity_edge_list if edge[2] > 0])}")
-print(f"Mean similarity over all: {sum(edge[2] for edge in similarity_edge_list) / len([edge for edge in similarity_edge_list])}")
+        # Prevent identicals
+        if sim > 0.5: # FILTER similarities; otherwise graph unreadable...
+            similarity_pairs.append((research_questions[i1], research_questions[i2 + i1 + 1], sim.item()))
+
+        similarity_pairs_all.append((research_questions[i1], research_questions[i2 + i1 + 1], sim.item()))
+
+most_similar = sorted(similarity_pairs, key=lambda x: -x[2]) # NOTE: This is not 100% robust, there could be more than just two pairs with the same similarity value, then sliciding would be arbitrary and lose information!!!
+
+# (
+#     'What is the impact of nitrogen addition on soil methane in uplands and wetlands ?', 
+#     'What is the impact of nitrogen addition on methane uptake in upland soils?', 
+#     0.9374442
+# )
+
+
+with open("./embedded_similarities.json", "w") as file:
+        file.write(dumps(similarity_pairs_all))
+
+
+# ---------------------- From here copy and paste similarity.py code (with minor tweaks) ----------------------------------------------
 
 G = nx.Graph()
-similarity_edge_list = sorted(similarity_edge_list, key=lambda x: x[0]["doi"]) # Sort by doi to make sure input for graph drawing always looks the same (deterministic)
 
-for n1, n2, w in similarity_edge_list:
-    # Show edge only if some similarity exists
-    if w > 0:
-        G.add_edge(n1["question"], n2["question"], weight=w)
+for n1, n2, w in most_similar:
+    G.add_edge(n1, n2, weight=w)
 
 # NOTE: Port graph to igraph since Leidenalg is not compatible with networkx==2.4
 G_igraph = ig.Graph.from_networkx(G)
@@ -124,7 +140,7 @@ leiden_partitions = {
     "CPMVertex": la.CPMVertexPartition
 }
 
-PATH = "C:/Users/chris/Documents/ObsidianVault/prof/files/PNG/graphs/"
+PATH = "C:/Users/chris/Documents/ObsidianVault/prof/files/PNG/graphs/embedding/"
 
 for layout_name, layout_func in layouts.items():
     for community_algorithm_name, community_algorithm_func in {"louvain": louvain_communities, "leiden": la.find_partition}.items():
@@ -138,32 +154,35 @@ for layout_name, layout_func in layouts.items():
                         if len(community_algorithm_func(G_igraph, partition_type_class, seed=42)) == 340:
                             continue # Disregard individual communities for every node
                         communities = community_algorithm_func(G_igraph, partition_type_class, seed=42)
+                        print([len(com) for com in communities])
                     else:
-                        if len(community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)) == 340:
+                        if len(community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)) > 20:
                             continue # Disregard individual communities for every node
+
                         communities = community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)
+                        print([len(com) for com in communities])
 
                     # Convert the partition to a list of dictionaries, readable by networkx
                     # TODO: Comfirm that this really does what I expect it to
                     communities = [set({G_igraph.vs[node_id]["_nx_name"] for node_id, com_id in enumerate(communities.membership) if com_id == community_id}) for community_id, _ in enumerate(communities)]
+                    print([len(com) for com in communities])
                     node_color = [i for i, com in enumerate(communities) for node in com]
-
-                    nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
+                    nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', node_size=8, alpha=0.5, width=.12) #, width=edge_width)
                     # nx.draw(G, pos=pos, node_color=node_color, cmap='viridis', vmin=0, vmax=10, width=edge_width, node_size=8, alpha=0.5)
                     plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}_{partition_type_name}.png", format="PNG")
                     plt.clf()
             else:
-                if len(community_algorithm_func(G, weight="weight", seed=42)) == 340:
+                if len(community_algorithm_func(G, weight="weight", seed=42)) > 20:
                     continue # Disregard individual communities for every node
 
                 communities = community_algorithm_func(G, weight="weight", seed=42)
+                print([len(com) for com in communities])
                 node_color = [i for i, com in enumerate(communities) for node in com]
 
-                nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
+                nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', node_size=8, alpha=0.5, width=.12) #, width=edge_width)
                 # nx.draw(G, pos=pos, node_color=node_color, cmap='viridis', vmin=0, vmax=10, width=edge_width, node_size=8, alpha=0.5)
                 plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}.png", format="PNG") # bbox_inches='tight'
                 plt.clf()                
-
 # igraph
 # # colors = [plt.cm.rainbow(mem / float(max(communities_with_weighting.membership))) for mem in communities_with_weighting.membership]
 # G.vs['color'] = colors
@@ -219,7 +238,7 @@ nltk.download('stopwords')
 community_keywords = []
 wordcloud_paths = []
 
-hex_colors = mcp.gen_color(cmap="dark2",n=len(communities))
+hex_colors = mcp.gen_color(cmap="hsv",n=len(communities))
 
 for i, community in enumerate(communities):
     unique_string = ""
@@ -270,14 +289,14 @@ for i, community in enumerate(communities):
     plt.figure(figsize=(15,8))
     plt.imshow(wordcloud)
     plt.axis("off")
-    plt.savefig("wordcloud_" + str(i) + "_" + str(len(community)) +".png", bbox_inches='tight')
-    wordcloud_paths.append("wordcloud_" + str(i) + "_" + str(len(community)) +".png")
+    plt.savefig("wordcloud_embed_" + str(i) + "_" + str(len(community)) +".png", bbox_inches='tight')
+    wordcloud_paths.append("wordcloud_embed_" + str(i) + "_" + str(len(community)) +".png")
     # plt.show()
     # plt.close()
 
 img_size = (200, 200)  # Adjust as needed
 X = 2  # Number of images per row/column
-Y = 4  # Number of images per row/column
+Y = 2  # Number of images per row/column
 
 images = []
 
@@ -294,8 +313,17 @@ for i in range(X):
           grid[i*img_size[0]:(i+1)*img_size[0], j*img_size[1]:(j+1)*img_size[1], :] = images[i*Y+j]
 
 grid_img = Image.fromarray(grid)
-grid_img.save("./wordcloud_grid.png")
+grid_img.save("./wordcloud_grid_embedding.png")
 
-# TODO:CS:
-# - This file needs a cleanup!
-#   (running it will not reproduce all findings of METSTI)
+
+
+
+
+
+
+# Similarity NORMALISIEREN !!!
+# Die edges sind beim embedding zu stark....
+# waiwaiwai die sind doch schon normalisiert... zumindest auf 0bis1
+# vllt muss ich die sims komplett gegen vergleichen und auf verteilung anpassen
+
+# Sim over 0.5 macht das Sinn?
