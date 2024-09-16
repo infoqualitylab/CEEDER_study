@@ -100,7 +100,7 @@ for triple in triples:
             
 
 
-print(f"For {len(taxonomy_triples) / len(triples)}% of resources there was no match in ENVO.")
+print(f"For {len(taxonomy_triples) / len(triples)}% of resources there a match in ENVO.")
 
 with open("./mini-KG.ttl", "a", encoding="UTF-8") as file:
     file.writelines(sorted(taxonomy_triples))
