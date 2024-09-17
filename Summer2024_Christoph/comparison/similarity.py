@@ -61,7 +61,7 @@ for i, review_A in enumerate(reviews_with_meta_data):
         )
         
 with open("./jaccard_citation_similarities.json", "w") as file:
-        file.write(dumps([(entry[0]["question"], entry[1]["question"], entry[2]) for entry in similarity_edge_list]))
+    file.write(dumps([(entry[0]["question"], entry[1]["question"], entry[2]) for entry in similarity_edge_list]))
 
 print(f"Mean similarity over greater 0: {sum(edge[2] for edge in similarity_edge_list if edge[2] > 0) / len([edge for edge in similarity_edge_list if edge[2] > 0])}")
 print(f"Mean similarity over all: {sum(edge[2] for edge in similarity_edge_list) / len([edge for edge in similarity_edge_list])}")
