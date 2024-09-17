@@ -81,14 +81,18 @@ for triple in triples:
         name = resource.replace(">", "").split("/")[-1] # Get to string name
 
         for cla in envo_classes:
+            meta = cla.get("meta")
+            synonyms = meta.get("synonyms", []) if meta else []
+            
             # if name == cla.get("name"): CSV
-            if name == cla.get("lbl"):
+            if name == cla.get("lbl") or name in [synonym.get("val") for synonym in synonyms]:
                 envo_prefix = "http://purl.obolibrary.org/obo/ENVO_"
                 # class_id = cla.get("ID") CSV
                 class_id = cla.get("id")
 
                 taxonomy_triples.append(
-                    f"{resource} rdf:type <{envo_prefix}{class_id}>"
+                    # f"{resource} rdf:type <{envo_prefix}{class_id}>" CSV
+                    f"{resource} rdf:type <{class_id}>"
                 )
                 # TODO: Here I'll need NER or manual work to identify parent concepts that don't simply name match
 
@@ -100,7 +104,7 @@ for triple in triples:
             
 
 
-print(f"For {len(taxonomy_triples) / len(triples)}% of resources there a match in ENVO.")
+print(f"For {len(taxonomy_triples) / len(triples)}% of resources there is a match in ENVO.")
 
 with open("./mini-KG.ttl", "a", encoding="UTF-8") as file:
     file.writelines(sorted(taxonomy_triples))
