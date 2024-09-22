@@ -1,8 +1,5 @@
-from collections import defaultdict
 from csv import DictReader
 import re
-
-import spacy
 
 
 sentences = []
@@ -26,9 +23,6 @@ def regex_slicing():
 
     for sentence in sentences:
         match = re.search(pattern, sentence)
-
-        if sentence == "What are the impacts of climate change on wheat and rice crop yield, pests, and pathogens?":
-            pass
 
         if match:
             X = match.group('X')
@@ -67,12 +61,14 @@ def regex_slicing():
 
 # ------ AI / NLP ---------------------------------------------------------------
 
+# TODO: Train custom model on CEEDER for better performance? 
+#   Load English tokenizer, POS tagger, and parser
+#   nlp = spacy.load("en_core_web_trf")
+#    => use scientific model !
+#   ClimateBERT
 
-
-# # TODO: Train custom model on CEEDER for better performance? 
-# # Load English tokenizer, POS tagger, and parser
-# nlp = spacy.load("en_core_web_trf")
-# # TODO: => use scientific model !
+# from collections import defaultdict
+# import spacy
 
 
 # entities = {}
@@ -163,18 +159,3 @@ def regex_slicing():
 # -> finalize: NLP of taxonomy (extra edges in graph) "What is being researched under this topic (parent-term)"
 
 # Incorporate ratings? make certain paths stronger?
-
-
-# For NER => use scientific model not standard !
-
-
-# 340 question aren't THAT many... I may scrap the AI approach and build/label the causal graph myself
-# Awesome would be a graph I can ask qestions about CEEDER on 
-# Advantages over LLM using CEEDER as full text
-# - no hallucinations (KG curated!)
-#   - what if LLM trained explicitly on CEEDER -> dataset probably to small to harness statistical strenght (NEEDS TO BE TESTED)
-# - allows for visualizations
-# - is concrete/deterministic (-> allows numeric computations) 
-
-#  cause-effect relationship
-
