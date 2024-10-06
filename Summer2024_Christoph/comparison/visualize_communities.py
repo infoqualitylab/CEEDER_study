@@ -1,3 +1,5 @@
+import os
+import json
 from string import punctuation
 
 import nltk
@@ -14,12 +16,15 @@ from wordcloud import WordCloud
 from PIL import Image
 
 
-for file_path in ["jaccard_citation_similarities", "embedding_similarity"]:
-    with open(f"./{file_path}.json", "w") as file:
-        similarity_edge_list = file.readlines()   
+for file_path in ["jaccard_citation_similarities"]:#, "embedding_similarity"]:
+    with open(f"./{file_path}.json", "r") as file:
+        similarity_edge_list = json.loads(file.readline())   
 
     # Where to deposit generated network visualizations as PNGs
-    PATH = f"./visualizations/{file_path}/"
+    PATH = f"./visualization/{file_path}/"
+
+    if not os.path.exists(PATH):
+        os.makedirs(PATH)
 
     G = nx.Graph()
 
@@ -75,34 +80,36 @@ for file_path in ["jaccard_citation_similarities", "embedding_similarity"]:
                     for partition_type_name, partition_type_class in leiden_partitions.items():
                         # Per Docstring:  .. warning:: This method is not suitable for weighted graphs. -> leave out weight param
                         if partition_type_class is la.SignificanceVertexPartition:
-                            if len(community_algorithm_func(G_igraph, partition_type_class, seed=42)) == G.number_of_nodes:
+                            if len(community_algorithm_func(G_igraph, partition_type_class, seed=42)) == G.number_of_nodes():
                                 continue # Disregard list where every node is a community
 
                             communities = community_algorithm_func(G_igraph, partition_type_class, seed=42)
                         else:
-                            if len(community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)) == G.number_of_nodes:
+                            if len(community_algorithm_func(G_igraph, partition_type_class, seed=42)) == G.number_of_nodes():
                                 continue # Disregard list where every node is a community
 
-                            communities = community_algorithm_func(G_igraph, partition_type_class, weights="weight", seed=42)
+                            communities = community_algorithm_func(G_igraph, partition_type_class, seed=42)
 
                         # Convert the partition to a list of dictionaries, readable by networkx
                         # TODO: Comfirm that this really does what I expect it to
                         communities = [set({G_igraph.vs[node_id]["_nx_name"] for node_id, com_id in enumerate(communities.membership) if com_id == community_id}) for community_id, _ in enumerate(communities)]
                         node_color = [i for i, com in enumerate(communities) for node in com]
+                        print(sorted([len(c) for c in communities]))
 
                         nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
                         plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}_{partition_type_name}.png", format="PNG")
                         plt.clf()
                 else:
-                    if len(community_algorithm_func(G, weight="weight", seed=42)) == G.number_of_nodes:
+                    if len(community_algorithm_func(G, weight="weight", seed=42)) == G.number_of_nodes():
                         continue # Disregard list where every node is a community
 
                     communities = community_algorithm_func(G, weight="weight", seed=42)
                     node_color = [i for i, com in enumerate(communities) for node in com]
+                    print(sorted([len(c) for c in communities]))
 
                     nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
                     plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}.png", format="PNG") 
-                    plt.clf()                
+                    plt.clf()  
 
 
     # VISUALIZATION OPTIONS
@@ -188,8 +195,9 @@ for file_path in ["jaccard_citation_similarities", "embedding_similarity"]:
         plt.figure(figsize=(15,8))
         plt.imshow(wordcloud)
         plt.axis("off")
-        plt.savefig("wordcloud_" + str(i) + "_" + str(len(community)) +".png", bbox_inches='tight')
-        wordcloud_paths.append("wordcloud_" + str(i) + "_" + str(len(community)) +".png")
+        wordcloud_path = PATH + "wordcloud_" + str(i) + "_" + str(len(community)) +".png"
+        plt.savefig(wordcloud_path, bbox_inches='tight')
+        wordcloud_paths.append(wordcloud_path)
 
     img_size = (200, 200)  # Adjust as needed
 
