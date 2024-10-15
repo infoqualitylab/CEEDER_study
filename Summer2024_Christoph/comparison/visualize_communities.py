@@ -96,7 +96,7 @@ for file_path in ["jaccard_citation_similarities"]:#, "embedding_similarity"]:
                         node_color = [i for i, com in enumerate(communities) for node in com]
                         print(sorted([len(c) for c in communities]))
 
-                        nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
+                        nx.draw(G, pos=pos, node_color=node_color, cmap='viridis', width=edge_width, node_size=15, alpha=0.9)
                         plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}_{partition_type_name}.png", format="PNG")
                         plt.clf()
                 else:
@@ -107,10 +107,9 @@ for file_path in ["jaccard_citation_similarities"]:#, "embedding_similarity"]:
                     node_color = [i for i, com in enumerate(communities) for node in com]
                     print(sorted([len(c) for c in communities]))
 
-                    nx.draw(G, pos=pos, node_color=node_color, cmap='hsv', width=edge_width, node_size=8, alpha=0.5)
+                    nx.draw(G, pos=pos, node_color=node_color, cmap='viridis', width=edge_width, node_size=15, alpha=0.9)
                     plt.savefig(f"{PATH}graph_{layout_name}_{community_algorithm_name}.png", format="PNG") 
                     plt.clf()  
-
 
     # VISUALIZATION OPTIONS
         # nx.draw(G, pos, with_labels=True)
@@ -149,10 +148,15 @@ for file_path in ["jaccard_citation_similarities"]:#, "embedding_similarity"]:
     community_keywords = []
     wordcloud_paths = []
 
-    hex_colors = mcp.gen_color(cmap="hsv",n=len(communities))
+    hex_colors = mcp.gen_color(cmap="viridis",n=len(communities))
 
     # NOTE: Manual map of colors for most similar embedded communitites (4) to citation communities (8) (for presentation slides)
     # hex_colors = ["#fcf500", "#3bfff8", "#ff0000", "#ed00ff"]
+
+    # NOTE: Keep in mind differen community detection algorithms and their parameterizations produce different communities with different lengths, so there exist multiple visualizations.
+
+    # Sort communities by length descending
+    communities = sorted(communities, key=lambda x: -len(x))
 
     for i, community in enumerate(communities):
         unique_string = ""
@@ -167,7 +171,7 @@ for file_path in ["jaccard_citation_similarities"]:#, "embedding_similarity"]:
             cachedStopWords = stopwords.words("english")
 
             # TODO: How can I find out these "uninteresting" words 
-            for word in ["impact", "exposure", "effect", "effects", "effective", "effectiveness"]:
+            for word in ["impact", "impacts", "exposure", "effect", "effects", "effective", "effectiveness"]:
                 cachedStopWords.append(word)
             
             unique_string += ' '.join([word for word in question.split() if word not in cachedStopWords]) + ' '
@@ -179,15 +183,20 @@ for file_path in ["jaccard_citation_similarities"]:#, "embedding_similarity"]:
 
         ranked = sorted(d.items(), key=lambda x: x[1], reverse=True)
 
-        # Hex to cmap
-        rgb = colors.to_rgb(hex_colors[i])
+
+        # Colorblind map uniform for all communities. Colorcoded community affiliation moved to legend
+        cmap = "viridis" # cividis 
         
-        # Create a colormap with the specified color as the starting and ending color
-        cmap = colors.LinearSegmentedColormap.from_list(
-            name='custom_cmap',
-            colors=[rgb, rgb],
-            N=256
-        )
+        # Alternative colormap specific relative to community to encode community affiliation via word cloud color
+        # # Hex to cmap
+        # rgb = colors.to_rgb(hex_colors[i])
+        
+        # # Create a colormap with the specified color as the starting and ending color
+        # cmap = colors.LinearSegmentedColormap.from_list(
+        #     name='custom_cmap',
+        #     colors=[rgb, rgb],
+        #     N=256
+        # )
         
         # Wordcloud per community
         wordcloud = WordCloud(width = 1000, height = 500, background_color="white", colormap=cmap).generate(unique_string)
