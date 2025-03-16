@@ -1,0 +1,1076 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d5" for="edge" attr.name="description" attr.type="string" />
+  <key id="d4" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d3" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="&quot;PA&quot;">
+      <data key="d0">"LOCATION", "ENTITY"</data>
+      <data key="d1">"no tillage"</data>
+      <data key="d2">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </node>
+    <node id="&quot;NO TILLAGE&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </node>
+    <node id="&quot;SOIL ORGANIC CARBON&quot;">
+      <data key="d0" />
+      <data key="d1">
+
+</data>
+      <data key="d2">62be9ce3d6b8bf802c766aa56811e0f1,d25d55e1aca9c9d4a6b977053fb1a429,daed873fae3887689e300148cfd786af</data>
+    </node>
+    <node id="&quot;CONVENTIONAL TILLAGE&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </node>
+    <node id="&quot;TOTAL NITROGEN&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </node>
+    <node id="&quot;AGRICULTURAL SOILS&quot;">
+      <data key="d0" />
+      <data key="d1">
+</data>
+      <data key="d2">987a5c17a58766ab7b82d4ab4ea7ecc7,d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </node>
+    <node id="&quot;AGRICULTURAL FIELDS&quot;">
+      <data key="d0">"LOCATION"</data>
+      <data key="d1">"Agricultural Fields are the locations where nitrous oxide emissions occur.")("entity"</data>
+      <data key="d2">ad77f492c9ce6007312b7aa55c6b14f6</data>
+    </node>
+    <node id="&quot;COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </node>
+    <node id="&quot;GREENHOUSE GAS EMISSIONS&quot;">
+      <data key="d0" />
+      <data key="d1">
+
+"Greenhouse Gas Emissions" is also being studied in relation to crop residue removal.</data>
+      <data key="d2">07110d5763e07d0f5f4dd938ec1ba1bc,1bb1770e8d4b92e8827eea5f67912f09,62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </node>
+    <node id="&quot;TRADE-OFFS BETWEEN WATER SAVINGS AND OTHER ECOSYSTEM SERVICES&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </node>
+    <node id="&quot;ASSESSING THE MORE LONG-TERM EFFECTS OF THESE IRRIGATION PRACTICES&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </node>
+    <node id="&quot;REVIEW QUESTION&quot;">
+      <data key="d0" />
+      <data key="d1">
+"Review Question" is a request for information or analysis about the effectiveness of sustainable production in Latin America and the Caribbean in reducing greenhouse gas emissions.
+</data>
+      <data key="d2">141a097966948d2537f728192ba3b0cb,62be9ce3d6b8bf802c766aa56811e0f1,7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;EFFECTS OF COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES ON SOIL ORGANIC CARBON, AND GREENHOUSE GAS EMISSIONS&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </node>
+    <node id="&quot;NEED TO BE DEVELOPED&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </node>
+    <node id="&quot;CONSERVATION AGRICULTURE&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Conservation Agriculture is a practice or system aimed at improving soil health and productivity."</data>
+      <data key="d2">5236f3c98dc4860af5ad05c3508704a2</data>
+    </node>
+    <node id="&quot;3-NITROOXYPROPANOL&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"3-nitrooxypropanol is a technology used as a feed additive to mitigate enteric methane emissions from ruminants.")("entity"</data>
+      <data key="d2">c5f9f37dc2129c765742923b3bddc8e6</data>
+    </node>
+    <node id="&quot;BIODIVERSITY&quot;">
+      <data key="d0">"CONCEPT", "IMPACT"</data>
+      <data key="d1">"effect", "ecosystems"</data>
+      <data key="d2">11b980735022d6278ecf63c69af55419</data>
+    </node>
+    <node id="&quot;AMMONIA EMISSION REDUCTION STRATEGIES&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Ammonia emission reduction strategies are the focus of discussion.")\("entity"</data>
+      <data key="d2">5106d08babd816685facf64285f3890f</data>
+    </node>
+    <node id="&quot;CORALLINE ALGAL COMMUNITIES&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Coralline algal communities are the focus of the review question, indicating their importance in understanding the impact of ocean acidification.")("entity"</data>
+      <data key="d2">b0c24d32dfc6973b4294c9cc2879b5f1</data>
+    </node>
+    <node id="&quot;ORGANIZATION&quot;">
+      <data key="d0">"THE ORGANIZATION IS NOT EXPLICITLY MENTIONED, BUT IT CAN BE INFERRED THAT IT IS RELATED TO MICROBIAL PROCESSES RESEARCH.")("ENTITY"</data>
+      <data key="d1">"person"
+Not Specified, "Geo"
+"not specified"
+"Not Specified"
+"person"
+"The organization is not specified in the text."
+"The organization is not explicitly mentioned in the text, but it can be assumed that the research is being conducted by an organization or institution."
+"The organization is not specified in the text."
+None, "geo"
+"No specific organization is mentioned in the text."</data>
+      <data key="d2">319d61d725d4ece2903a67c937bfa2b0,321192cace848cb809b3b898d65b49af,476566df2417f6ccd5914ffafbb832e5,745c5780aa3fa85db35629f76114ec17,7be1e924a1284466fe6d5866bd21a6a6,8e40b801b28308601a12691f8bf2b7ca,c2859e28e6d2b863979d082148f0adf7,dd9964eb808a0dc42072664d3e110a4e,e365e08ecc6f471b0ce073a8c60482e1,e6db342c5c7d35d0c91c8cf6f07a2398</data>
+    </node>
+    <node id="&quot;FAO&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"FAO is an organization that conducts research on the effects of biochar and other practices on crop productivity and greenhouse gas emissions.")("entity"
+"FAO is an organization that provides information about nitrous oxide emissions, net global warming potential, and rice yields in Southeast Asia.")("entity"
+"FAO is an organization that conducts research on the impact of irrigation and drought on plant biomass.")("entity"
+"FAO is an organization that conducts research on topics such as microbial biomass carbon, soil moisture."
+"FAO" is conducting a study on the impact of removing crop residues (corn stover and wheat straw) on crop productivity, soil health, and greenhouse gas emissions.</data>
+      <data key="d2">1bb1770e8d4b92e8827eea5f67912f09,3327c11d57a6c03e04644a96164ceb62,3a22b4bc263900ce77dd6b34cf949ed2,8f13ed1b9204eca24d5bb01b87dd4fd4,f11dee47362dfe1c5da0ee97f088b7f3</data>
+    </node>
+    <node id="&quot;CONSERVATION TILLAGE&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Conservation Tillage is an event or practice related to agriculture.")\("entity"</data>
+      <data key="d2">e3950fa180933c87edab958790a4dbc7</data>
+    </node>
+    <node id="&quot;CROP&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Crops are not explicitly mentioned, but they are implied as the subject of study in the question about carbon assimilation into soil.")("entity"</data>
+      <data key="d2">6937fcda8ffd5f5a434d09e61db178cb</data>
+    </node>
+    <node id="&quot;CLIMATE CHANGE&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Climate Change refers to a long-term alteration in weather patterns, affecting various aspects of the environment.")("entity"
+"Climate Change refers to long-term changes in temperature and typical weather patterns, which can affect crop yields.")("entity"
+"crop production"</data>
+      <data key="d2">52ee86eeb7a4159163433b606cbd351f,f4a4076acb05f26b4bcd0b54144b5cbf,f9259ad40265a9f8f0dff292689b9e7a</data>
+    </node>
+    <node id="&quot;MANURE APPLICATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Manure Application refers to the process of applying manure to agricultural soils.")("entity"</data>
+      <data key="d2">50d5370aed51296a50fbe5ad2b9294ed</data>
+    </node>
+    <node id="&quot;THE AUTHORS&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The Authors are the creators of the text, which discusses uncertainties related to climate prediction."</data>
+      <data key="d2">30682a44137caf2c3c8b900351f886d4</data>
+    </node>
+    <node id="&quot;CHINA&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"China is the location where the rice and wheat yields are being discussed."
+"China" is a geographical location where the study on long-term effects of fertilizer application and straw return on soil carbon storage in croplands is conducted.
+"China is a geographical location where the carbon dynamics in terrestrial ecosystems are being discussed.")("entity"</data>
+      <data key="d2">1bb5cfc46b43ea1f79209969648d8950,b19bf40e09f0e348acd74a98b937d8fd,e050ec26f0af3db7a9cbd7e8e8b651c8</data>
+    </node>
+    <node id="&quot;ELSEVIER LTD&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Elsevier Ltd is the publisher of the review."
+"vegetable crops"</data>
+      <data key="d2">d23bb1ac13738b6282b9b8505f16eaf0,dd3a1441ec7d0e3dd68d2ef946ae6810</data>
+    </node>
+    <node id="&quot;CLIMATE WARMING&quot;">
+      <data key="d0">"CONCEPT", "IMPACT"</data>
+      <data key="d1">"effect", "rate"</data>
+      <data key="d2">36dba436790f3ca02cdffaf889ddd1a9</data>
+    </node>
+    <node id="&quot;EUROPEAN PASTURES&quot;">
+      <data key="d0">"LOCATION"</data>
+      <data key="d1">"European Pastures refers to a geographical area where the effects of climate change are being observed.")("entity"</data>
+      <data key="d2">b1902c2451d28c2a8c493bd05d61996f</data>
+    </node>
+    <node id="&quot;OCEAN ACIDIFICATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Ocean acidification refers to a decrease in the pH level of the ocean due to increased carbon dioxide emissions."),    ("entity"
+"concept"</data>
+      <data key="d2">321192cace848cb809b3b898d65b49af,9eee5054cc0961ca58cb3fac407e00ad</data>
+    </node>
+    <node id="&quot;CONVERSION OF GRASSLAND TO AGRICULTURE LAND&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">daed873fae3887689e300148cfd786af</data>
+    </node>
+    <node id="&quot;LAND-USE CHANGES&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">daed873fae3887689e300148cfd786af</data>
+    </node>
+    <node id="&quot;WORLDWIDE&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">daed873fae3887689e300148cfd786af</data>
+    </node>
+    <node id="&quot;INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE (IPCC)&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"BNE"</data>
+      <data key="d2">5efc6d08909152be7747900d8640daf3</data>
+    </node>
+    <node id="&quot;OF HOLOPLANKTONIC AND MEROPLANKTONIC MARINE INVERTEBRATES&quot;">
+      <data key="d0">"CONCEPT", "EVENT"</data>
+      <data key="d1">"event"</data>
+      <data key="d2">cd82855162b7a20c4594194720c4affc</data>
+    </node>
+    <node id="&quot;&quot;">
+      <data key="d0">"ORGANIZATION","PERSON"</data>
+      <data key="d1">"The speaker is not specified, so it cannot be determined if they belong to an organization."</data>
+      <data key="d2">cd82855162b7a20c4594194720c4affc</data>
+    </node>
+    <node id="&quot;MARINE INVERTEBRATES&quot;">
+      <data key="d0">"CONCEPT", "GEO"</data>
+      <data key="d1">"location"</data>
+      <data key="d2">cd82855162b7a20c4594194720c4affc</data>
+    </node>
+    <node id="&quot;CORAL REEFS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Coral Reefs are a concept that refers to marine ecosystems with a diverse range of life forms."</data>
+      <data key="d2">753fa628402bf7b4d6170e12d2c82eee</data>
+    </node>
+    <node id="&quot;REVERSION TO PERENNIAL BIOMASS CROPS&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">987a5c17a58766ab7b82d4ab4ea7ecc7</data>
+    </node>
+    <node id="&quot;CARBON AND NITROGEN STORAGE&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">987a5c17a58766ab7b82d4ab4ea7ecc7</data>
+    </node>
+    <node id="&quot;TREE HARVEST RESIDUE RETENTION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Tree Harvest Residue Retention" refers to the practice of leaving woody debris after tree harvesting, which can impact carbon storage.</data>
+      <data key="d2">d6b43fd1a0324c1f26bb97e72da8d7c1</data>
+    </node>
+    <node id="&quot;MINERAL SOIL&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"Mineral Soil" is a type of soil that contains minerals and does not have a high organic matter content, which affects carbon storage.</data>
+      <data key="d2">d6b43fd1a0324c1f26bb97e72da8d7c1</data>
+    </node>
+    <node id="&quot;GLOBAL CHANGE FACTORS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Global Change Factors refers to a set of factors including elevated CO2, N addition, warming, drought, and increased rainfall.")("entity"</data>
+      <data key="d2">0a32f22980b0ea3d255f68f8e33d03d0</data>
+    </node>
+    <node id="&quot;OIL PALM PLANTATION&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Oil Palm Plantation refers to the conversion of land for oil palm cultivation.")("entity"</data>
+      <data key="d2">0287072fdfd618bf496ac9f3fb89f5e8</data>
+    </node>
+    <node id="&quot;CITY OF NEW YORK&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The City of New York is the organization that plans to adopt green roofs in building construction projects."</data>
+      <data key="d2">c2a003eb76b66ae98aceb8242d451ebd</data>
+    </node>
+    <node id="&quot;BUILDING CONSTRUCTION PROJECTS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Building Construction Projects refers to the process of constructing new buildings."</data>
+      <data key="d2">c2a003eb76b66ae98aceb8242d451ebd</data>
+    </node>
+    <node id="&quot;GREEN ROOFS&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Green roofs are a type of technology used in building construction projects, specifically as a climate mitigation strategy."</data>
+      <data key="d2">c2a003eb76b66ae98aceb8242d451ebd</data>
+    </node>
+    <node id="&quot;CLIMATE MITIGATION STRATEGY&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Climate Mitigation Strategy refers to actions taken to reduce the impact of human activities on climate change."</data>
+      <data key="d2">c2a003eb76b66ae98aceb8242d451ebd</data>
+    </node>
+    <node id="&quot;CARBON DIOXIDE EMISSIONS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Carbon Dioxide Emissions refer to the release of carbon dioxide into the atmosphere, contributing to global warming."</data>
+      <data key="d2">c2a003eb76b66ae98aceb8242d451ebd</data>
+    </node>
+    <node id="&quot;TEMPERATURE OF BUILDINGS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Temperature of Buildings refers to the internal temperature of buildings, which can be affected by various factors including green roofs."</data>
+      <data key="d2">c2a003eb76b66ae98aceb8242d451ebd</data>
+    </node>
+    <node id="&quot;GOVERNMENT&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The government is the entity that aims to better support critical decision-making."</data>
+      <data key="d2">fa0944840bdb709d80a5aebd93557d83</data>
+    </node>
+    <node id="&quot;DEADWOOD DECOMPOSITION DYNAMICS&quot;">
+      <data key="d0">"CONCEPT", " ")   ("ENTITY"</data>
+      <data key="d1">"organization"</data>
+      <data key="d2">d0b24eeef0b047772776ad3f42a7dca2</data>
+    </node>
+    <node id="&quot;LOCAL FARM MANAGEMENT PRACTICE&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"nitrous oxide emissions"</data>
+      <data key="d2">7f7baa04137d0c869bb689f36aff0118</data>
+    </node>
+    <node id="&quot;EPA&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The EPA (Environmental Protection Agency) is a government agency that provides information about environmental issues."</data>
+      <data key="d2">5b90c39a37e6771f8646d2d7fac2e02e</data>
+    </node>
+    <node id="&quot;ECOSYSTEM STUDIES&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"ocean acidification"</data>
+      <data key="d2">afd737589e4500a4ecb099303d7f4aa2</data>
+    </node>
+    <node id="&quot;MARINE HEATWAVES&quot;">
+      <data key="d0">"EVENT", "IMPACTS"</data>
+      <data key="d1">"concept") - The impacts of Marine Heatwaves are discussed.("entity"</data>
+      <data key="d2">21307a51682cd23b578feff0e6798414</data>
+    </node>
+    <node id="&quot;PERMAFROST&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Permafrost refers to a type of ground that remains frozen for at least two years."</data>
+      <data key="d2">3e93f9e5363fb169659f3956f1069be4</data>
+    </node>
+    <node id="&quot;ON THE URBAN MICROCLIMATE OF TROPICAL AREAS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">None</data>
+      <data key="d2">e368b075661f150e1649d24ba6eb7245</data>
+    </node>
+    <node id="&quot;TROPICAL AREAS&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">None</data>
+      <data key="d2">e368b075661f150e1649d24ba6eb7245</data>
+    </node>
+    <node id="&quot;URBAN MICROCLIMATE&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">None</data>
+      <data key="d2">e368b075661f150e1649d24ba6eb7245</data>
+    </node>
+    <node id="&quot;GIS RESEARCH&quot;">
+      <data key="d0">"RESEARCH"</data>
+      <data key="d1">"Research related to Green Infrastructure (GIs) is being conducted, focusing on its potential in stormwater control.")("entity"</data>
+      <data key="d2">dfb43d14358091b712ee3ed41013bb86</data>
+    </node>
+    <node id="&quot;CONSERVATION AGRICULTURAL PRACTICE&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Conservation agricultural practice is a technology that is being compared to conventional tillage in South Asia.")("entity"</data>
+      <data key="d2">6861e1410eff9dd76305b736e1dff8ff</data>
+    </node>
+    <node id="&quot;UNIVERSITY OF CALIFORNIA, RIVERSIDE&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The University of California, Riverside is conducting research on the impact of elevated tropospheric ozone.")\("entity"</data>
+      <data key="d2">b64ae8dc684f706309a630485d337b3e</data>
+    </node>
+    <node id="&quot;EXPERIMENTAL SOIL WARMING&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Experimental Soil Warming is an event that involves altering the temperature of soil for research purposes.")("entity"</data>
+      <data key="d2">05eb8eeeeb68acf1916e3feef57a06c6</data>
+    </node>
+    <node id="&quot;LONG-TERM (&#8805;20 YEARS)&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Long-term (&#8805;20 years)" refers to a time period of 20 years or more, which is the focus of the study.</data>
+      <data key="d2">1bb5cfc46b43ea1f79209969648d8950</data>
+    </node>
+    <node id="&quot;FERTILIZERS&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Fertilizers" are substances added to soil to supply plant nutrients essential for growth.</data>
+      <data key="d2">1bb5cfc46b43ea1f79209969648d8950</data>
+    </node>
+    <node id="&quot;STRAW RETURN&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Straw return" refers to the practice of returning crop residues, such as straw, back to the field after harvesting.
+"reactive nitrogen loss pathways", "impact"</data>
+      <data key="d2">1bb5cfc46b43ea1f79209969648d8950,9c4f059ace7c8a3d7784db406650728a</data>
+    </node>
+    <node id="&quot;SOIL CARBON STORAGE&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Soil carbon storage" is a measure of the amount of carbon stored in soil.</data>
+      <data key="d2">1bb5cfc46b43ea1f79209969648d8950</data>
+    </node>
+    <node id="&quot;CROPLAND&quot;">
+      <data key="d0">"LOCATION"</data>
+      <data key="d1">"Cropland" refers to land used for growing crops.</data>
+      <data key="d2">1bb5cfc46b43ea1f79209969648d8950</data>
+    </node>
+    <node id="&quot;THE AUTHOR(S)&quot;">
+      <data key="d0">"PERSON", "ENTITY"</data>
+      <data key="d1">"2022"</data>
+      <data key="d2">4a8a427a96bea98b3780253f650c8120</data>
+    </node>
+    <node id="&quot;NITROGEN ENRICHMENT&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Nitrogen enrichment is a process or practice that involves increasing the amount of nitrogen in a system, such as soil."</data>
+      <data key="d2">cf0e80ff8113e620b1cfa2c7d836c710</data>
+    </node>
+    <node id="&quot;SOCIETY OF CHEMICAL INDUSTRY&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"deep fertilization practices"</data>
+      <data key="d2">178c234a96f78aac04a012826d1a5a72</data>
+    </node>
+    <node id="&quot;NOT SPECIFIED&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">0c3a6c6bc301d3044d37b492ad56d6d3</data>
+    </node>
+    <node id="&quot;SOIL&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">0c3a6c6bc301d3044d37b492ad56d6d3</data>
+    </node>
+    <node id="&quot;MOREOVER&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Moreover" indicates a continuation or addition to the previous statement.</data>
+      <data key="d2">7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;NEED&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"need" refers to a requirement or necessity.</data>
+      <data key="d2">7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;EXPLORE CREATIVE WAYS OF INCENTIVIZING&quot;">
+      <data key="d0">"ROLE"</data>
+      <data key="d1">"explore creative ways of incentivizing" is an action aimed at finding new methods for encouraging the adoption of certain management and technological options.</data>
+      <data key="d2">7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;ADOPTION OF PROMISING COMBINATIONS OF MANAGEMENT AND TECHNOLOGICAL OPTIONS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"adoption of promising combinations of management and technological options" refers to the process of implementing effective strategies that combine various approaches to achieve a goal.</data>
+      <data key="d2">7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;LATIN AMERICA AND THE CARIBBEAN&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"Latin America and the Caribbean" is a geographical region where sustainable production practices are being implemented and evaluated for their effectiveness in reducing greenhouse gas emissions.</data>
+      <data key="d2">7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;REDUCING GREENHOUSE GAS EMISSIONS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"reducing greenhouse gas emissions" refers to the effort to decrease the amount of greenhouse gases released into the atmosphere, mitigating climate change.</data>
+      <data key="d2">7bf7b322086a378d521f2909d67e7c1b</data>
+    </node>
+    <node id="&quot;BLUE CARBON ECOSYSTEMS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Blue Carbon Ecosystems refers to mangrove forests, saltmarshes, and seagrass meadows.")\("relationship"</data>
+      <data key="d2">b47126c7552a177c162ae524ceb3a773</data>
+    </node>
+    <node id="&quot;GEROWS&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"temperate climate zone soils"</data>
+      <data key="d2">4146ef833dddc7535e9e7ff8429dc04f</data>
+      <data key="d3">"LOCATION"</data>
+    </node>
+    <node id="&quot;CARBON SEQUESTRATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Carbon sequestration refers to a process or event that aims to capture and store atmospheric carbon dioxide.")&lt;|COMPLETE|&gt;</data>
+      <data key="d2">4146ef833dddc7535e9e7ff8429dc04f</data>
+    </node>
+    <node id="&quot;CONSERVATION AGRICULTURE PRACTICES&quot;">
+      <data key="d0">"PRACTICE"</data>
+      <data key="d1">"Conservation Agriculture Practices are a set of farming techniques aimed at improving soil health."&gt;   ("entity"</data>
+      <data key="d2">1fb654cc6ac2f3c46be5ba32eda71034</data>
+    </node>
+    <node id="&quot;SOIL WARMING&quot;">
+      <data key="d0">"EVENT", "EFFECT"</data>
+      <data key="d1">"effect", "Entity2"</data>
+      <data key="d2">47660df195a962734d2c66c727df2602</data>
+    </node>
+    <node id="&quot;ROU OXIDE EMISSIONS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Rou oxide emissions is a concept related to environmental pollution.")   ("entity"</data>
+      <data key="d2">f99534710e6b2a7e3dcf4906d39f6e3b</data>
+    </node>
+    <node id="&quot;AFFORESTATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Afforestation is an event or process that involves planting trees to restore forests."</data>
+      <data key="d2">fa71a76e544e0945259055677bbe9c34</data>
+    </node>
+    <node id="&quot;SOIL ORGANIC CARBON AND NITROGEN STOCKS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Soil organic carbon and nitrogen stocks refer to the amount of carbon and nitrogen stored in soil, which can impact its fertility and productivity.")</data>
+      <data key="d2">fa71a76e544e0945259055677bbe9c34</data>
+    </node>
+    <node id="&quot;ARID AND SEMI-ARID REGIONS&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"Arid and semi-arid regions are areas with low rainfall and limited water resources, where afforestation may have significant impacts on soil organic carbon and nitrogen stocks.")</data>
+      <data key="d2">fa71a76e544e0945259055677bbe9c34</data>
+    </node>
+    <node id="&quot;FISH BEHAVIOR&quot;">
+      <data key="d0">"EVENT", "EFFECT"</data>
+      <data key="d1">"concept"</data>
+      <data key="d2">321192cace848cb809b3b898d65b49af</data>
+    </node>
+    <node id="&quot;PERSON&quot;">
+      <data key="d0">"PERSON", "NOT SPECIFIED"</data>
+      <data key="d1">"not specified"
+"The person is not explicitly mentioned in the text, but the research is likely to involve one or more researchers."
+"No specific person is mentioned in the text."</data>
+      <data key="d2">321192cace848cb809b3b898d65b49af,8e40b801b28308601a12691f8bf2b7ca,e365e08ecc6f471b0ce073a8c60482e1</data>
+    </node>
+    <node id="&quot;GEO&quot;">
+      <data key="d0">"GEO", "NOT SPECIFIED"</data>
+      <data key="d1">"not specified"
+"The geographical location is not explicitly mentioned in the text, but the maize yields and soil organic carbon sequestration rate suggest that it involves agricultural activities."
+"No geographical location is mentioned in the text."</data>
+      <data key="d2">321192cace848cb809b3b898d65b49af,8e40b801b28308601a12691f8bf2b7ca,e365e08ecc6f471b0ce073a8c60482e1</data>
+    </node>
+    <node id="&quot;SOIL-CROP SYSTEM MANAGEMENT&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Soil-Crop System Management refers to the organization responsible for managing soil and crops."</data>
+      <data key="d2">0dc845355395f517d49f90b95e5aae2e</data>
+    </node>
+    <node id="&quot;COMBINED TEMPERATURE AND PRECIPITATION INCREASE&quot;">
+      <data key="d0">"EVENT", "SOIL GREENHOUSE GAS FLUXES"</data>
+      <data key="d1">"concept"</data>
+      <data key="d2">745c5780aa3fa85db35629f76114ec17</data>
+    </node>
+    <node id="&quot;SOIL GREENHOUSE GAS FLUXES&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">745c5780aa3fa85db35629f76114ec17</data>
+    </node>
+    <node id="&quot;FOREST RESTORATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Forest Restoration is an event or process that aims to restore forests.")("entity"</data>
+      <data key="d2">df47b35e0c938ab95f196d791f6494ae</data>
+    </node>
+    <node id="&quot;BIOCHAR&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Biochar is a substance used in this context, which may have an effect on the sequestration of carbon, nitrogen, and phosphorus in agricultural soils.")("entity"</data>
+      <data key="d2">22fe7f482cde32100006cd6128503287</data>
+    </node>
+    <node id="&quot;TILLAGE&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"Cover Crops"</data>
+      <data key="d2">2b7e93b5640a201f5eb935030418e7b4</data>
+    </node>
+    <node id="&quot;SWINE MANURE APPLICATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Swine Manure Application refers to the process of applying manure from swine farms.")   ("entity"</data>
+      <data key="d2">ad6edc7b9b108068bb879729f7279591</data>
+    </node>
+    <node id="&quot;PLOS ONE&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"PLOS ONE is a peer-reviewed scientific journal."</data>
+      <data key="d2">f50be5bece7f9315f64cea082820c120</data>
+    </node>
+    <node id="&quot;AGROFORESTRY SYSTEMS&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Agroforestry systems are a type of land use system that combines trees with crops and/or animals, aiming to increase productivity while conserving soil and water resources."</data>
+      <data key="d2">620d62720c270a6bd365f7b10d201e14</data>
+    </node>
+    <node id="&quot;SOIL CARBON STOCKS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Soil carbon stocks refer to the amount of carbon stored in the soil, which is an important factor in maintaining soil fertility and mitigating climate change."
+"Soil carbon stocks refer to the amount of carbon stored in the soil.")("entity"</data>
+      <data key="d2">620d62720c270a6bd365f7b10d201e14,aa454b053b3e74bb55276a18eefc55a2</data>
+    </node>
+    <node id="&quot;DECISION-SUPPORT TOOLS&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Decision-support tools are relevant for improving the quantification of soil C stock change under cover crops."</data>
+      <data key="d2">a539a0fe88186c564b10611def1e9533</data>
+    </node>
+    <node id="&quot;GMBH GERMANY&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"GmbH Germany is a part of Springer Nature."</data>
+      <data key="d2">81ff711a6c2cc377da760a53e3d048b1</data>
+    </node>
+    <node id="&quot;SOIL ORGANIC CARBON STOCK&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Soil Organic Carbon Stock refers to the amount of carbon stored in the soil of grasslands.")("entity"</data>
+      <data key="d2">bd951895952a9d55b8d406b3a209cd09</data>
+    </node>
+    <node id="&quot;RICE SYSTEMS&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Rice Systems is the organization that studies rice systems."</data>
+      <data key="d2">5392a5169ded00ccc3dfbc64323236b7</data>
+    </node>
+    <node id="&quot;SONS LTD&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"Climate Change"</data>
+      <data key="d2">434fbc63067b3ec6fd8dc34ec5a9a9af</data>
+    </node>
+    <node id="&quot;STUDY&quot;">
+      <data key="d0">"ORGANIZATION", "RESEARCHERS"</data>
+      <data key="d1">"person", "Location"</data>
+      <data key="d2">418f0c43a9b514334bd00daeffde4c9b</data>
+    </node>
+    <node id="&quot;OCEAN WARMING&quot;">
+      <data key="d0">"EVENT", "CONCEPT") - THE EVENT (OCEAN WARMING) HAS AN IMPACT ON THE BIOMASS/DENSITY OF DIFFERENT TROPHIC LEVELS OF PLANKTON.   ("ENTITY"</data>
+      <data key="d1">"plankton communities"</data>
+      <data key="d2">bd9faedf39a5cd82b3e6c25bca435ff1</data>
+    </node>
+    <node id="&quot;NITROGEN FERTILIZATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"nitrogen fertilization is a process that affects the denitrification, nitrous oxide emissions and N2O:N2 ratio in agricultural soils.")("entity"</data>
+      <data key="d2">f7404f36dfafd35bcc0803d8c2f53e98</data>
+    </node>
+    <node id="&quot;LAND USE CHANGE&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Land Use Change refers to changes in how a specific area of land is used.")("entity"</data>
+      <data key="d2">34fc57c63d27ba8d3a02cfbe23d223b2</data>
+    </node>
+    <node id="&quot;LAND USE CONVERSION&quot;">
+      <data key="d0">"EVENT", "SOIL GREENHOUSE GAS FLUX"</data>
+      <data key="d1">"concept"</data>
+      <data key="d2">7be1e924a1284466fe6d5866bd21a6a6</data>
+    </node>
+    <node id="&quot;SOIL GREENHOUSE GAS FLUX&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">7be1e924a1284466fe6d5866bd21a6a6</data>
+    </node>
+    <node id="&quot;PLANT PHENOLOGY&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Plant Phenology refers to the study of plant life cycles and their seasonal changes.")(No specific people or organizations mentioned in the text, so no relationships can be identified.)(No specific geographical locations mentioned in the text, so no geo entities can be identified.</data>
+      <data key="d2">b6453ecbec089e3ff7e3c29b629e5afe</data>
+    </node>
+    <node id="&quot;NITROGEN ADDITION&quot;">
+      <data key="d0">"EVENT", "ENTITY"</data>
+      <data key="d1">"Warming"
+"Nitrogen addition is an event that affects the emissions, abundance, and diversity of Nitrogen functional genes and nitrification/denitrification rates in soils.")("entity"</data>
+      <data key="d2">1e541419ccce8f6bd70aa54b0e1095d6,fcc7dd0e3fcef028039a7890f64069a6</data>
+    </node>
+    <node id="&quot;ELSEVIER B.V.&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY PROVIDING THE TEXT")   ("ENTITY"</data>
+      <data key="d1">"Siberian forests"</data>
+      <data key="d2">503776cb99eb4a61be21141381bc1fd5</data>
+    </node>
+    <node id="&quot;CR SYSTEMS&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"CR Systems" refers to a specific method or system used in agriculture that can be influenced by climatic, edaphic, and agronomic factors.</data>
+      <data key="d2">7f2eb6a1fdffe9f0fe9ebb553c119ca8</data>
+    </node>
+    <node id="&quot;SOIL ORGANIC CARBON CONTENT&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Soil Organic Carbon Content" is the amount of carbon stored in the soil as organic matter, which can be affected by crop rotation.</data>
+      <data key="d2">7f2eb6a1fdffe9f0fe9ebb553c119ca8</data>
+    </node>
+    <node id="&quot;CROP ROTATION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Crop Rotation" refers to the practice of growing different crops in a specific order over multiple seasons or years, which can influence Soil Organic Carbon Content.</data>
+      <data key="d2">7f2eb6a1fdffe9f0fe9ebb553c119ca8</data>
+    </node>
+    <node id="&quot;BIRDS&quot;">
+      <data key="d0">"ORGANIZATION", "ENTITY"</data>
+      <data key="d1">"Researcher"</data>
+      <data key="d2">4b32eaccf4afd54fb7f8def0a089f36e</data>
+    </node>
+    <node id="&quot;CONTRIBUTION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"The contribution aims to incorporate data into regional and global models for predicting the effects of human disturbance on drylands and assessing soil C budget."</data>
+      <data key="d2">2693a561ab31d43814daf56b3226d5f8</data>
+    </node>
+    <node id="&quot;SOIL ORGANIC CARBON SEQUESTRATION&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Soil Organic Carbon Sequestration refers to the process of storing carbon in soil organic matter."</data>
+      <data key="d2">2693a561ab31d43814daf56b3226d5f8</data>
+    </node>
+    <node id="&quot;BIOLOGICAL SOIL CRUST ESTABLISHMENT&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Biological Soil Crust Establishment is a process that affects Soil Organic Carbon Sequestration in drylands."</data>
+      <data key="d2">2693a561ab31d43814daf56b3226d5f8</data>
+    </node>
+    <node id="&quot;DRYLANDS&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"Drylands are regions where the contribution aims to predict the effects of human disturbance and assess soil C budget.")&lt;|COMPLETE|&gt;</data>
+      <data key="d2">2693a561ab31d43814daf56b3226d5f8</data>
+    </node>
+    <node id="&quot;LICENSEE MDPI&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Licensee MDPI is a publisher based in Basel, Switzerland."</data>
+      <data key="d2">3ff759dec5543db200636ce80a4f3dec</data>
+    </node>
+    <node id="&quot;NON-NATIVE PLANT INVASION&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">07110d5763e07d0f5f4dd938ec1ba1bc</data>
+    </node>
+    <node id="&quot;CENTRAL EUROPEAN FORESTS OF THE PANNONIAN REGION&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The Central European forests of the Pannonian region are affected by climate change.")("entity"</data>
+      <data key="d2">936bfe75ea2ef67f51ef4164b22854dd</data>
+    </node>
+    <node id="&quot;CHINESE LANDSCAPES&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"Chinese landscapes are the geographical locations where soil organic carbon sequestration is being increased.")("entity"</data>
+      <data key="d2">45a0e9b20522a5b1a2aaf5985e26054f</data>
+    </node>
+    <node id="&quot;HIGH-INCOME COUNTRIES&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"High-income countries are discussed in relation to their ability to meet their contributions due to a minor projected increase in enteric CH4 emissions."</data>
+      <data key="d2">141a097966948d2537f728192ba3b0cb</data>
+    </node>
+    <node id="&quot;ENTERIC CH4 EMISSIONS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Enteric CH4 emissions refer to methane emissions from ruminant agriculture systems."</data>
+      <data key="d2">141a097966948d2537f728192ba3b0cb</data>
+    </node>
+    <node id="&quot;GLOBAL RUMINANT AGRICULTURE SYSTEMS&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"Global ruminant agriculture systems are the context in which the effects of different management strategies on methane emissions are discussed."</data>
+      <data key="d2">141a097966948d2537f728192ba3b0cb</data>
+    </node>
+    <node id="&quot;N2O MITIGATION BY BIOCHAR&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"The event here refers to the process of reducing Nitrous Oxide emissions using biochar.")("entity"</data>
+      <data key="d2">3f9f590df7bddd8ea90d229fa8881bb2</data>
+    </node>
+    <node id="&quot;ADDITION&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Addition refers to the act of adding something new or additional.")("entity"</data>
+      <data key="d2">7b172275c7538c0b7666bcc2c7682649</data>
+    </node>
+    <node id="&quot;EVENT&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"The event is the research on the effects of substituting organic fertilizers for mineral fertilizers on maize yields, nitrogen use efficiency, nitrogen losses, carbon emissions, and the soil organic carbon sequestration rate."
+"The event discussed in the text is a discussion about nitrous oxide."</data>
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca,e365e08ecc6f471b0ce073a8c60482e1</data>
+    </node>
+    <node id="&quot;ORGANIZATION/PERSON&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca</data>
+    </node>
+    <node id="&quot;MAIZE YIELDS&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca</data>
+    </node>
+    <node id="&quot;NITROGEN USE EFFICIENCY&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca</data>
+    </node>
+    <node id="&quot;NITROGEN LOSSES&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca</data>
+    </node>
+    <node id="&quot;CARBON EMISSIONS&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca</data>
+    </node>
+    <node id="&quot;SOIL ORGANIC CARBON SEQUESTRATION RATE&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">8e40b801b28308601a12691f8bf2b7ca</data>
+    </node>
+    <node id="&quot;TROPICAL AGROFORESTRY ECOSYSTEMS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Tropical Agroforestry Ecosystems refers to a specific type of ecosystem that combines agriculture and forestry practices.")(No relationships found as the text does not contain any interactions between entities.)(No events found as the text does not describe an event or action.</data>
+      <data key="d2">e1c8de4f5ce785c3ffea1235a964e67e</data>
+    </node>
+    <node id="&quot;CROP RESIDUE&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Crop Residue" refers to the remains of crops after harvest, specifically corn stover and wheat straw.</data>
+      <data key="d2">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </node>
+    <node id="&quot;CROP PRODUCTIVITY&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Crop Productivity" is one aspect being studied in relation to crop residue removal.</data>
+      <data key="d2">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </node>
+    <node id="&quot;SOIL HEALTH&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Soil Health" is another aspect being studied in relation to crop residue removal.</data>
+      <data key="d2">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </node>
+    <node id="&quot;BRAZILIAN AGRICULTURAL SYSTEMS&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Brazilian Agricultural Systems refers to the farming practices and land used for agriculture in Brazil.")("entity"</data>
+      <data key="d2">372e2c7b68e4d9f05b43e6d4380583b9</data>
+    </node>
+    <node id="&quot;OCEAN ACIDIFICATION AND WARMING&quot;">
+      <data key="d0">"EVENT", "CONCEPT")("ENTITY"</data>
+      <data key="d1">"copepod ecology"</data>
+      <data key="d2">00d42714a06b8c32fc2ceaf938136114</data>
+    </node>
+    <node id="&quot;NO-TILLAGE SYSTEMS&quot;">
+      <data key="d0">"ORGANIZATION", "PERSON"</data>
+      <data key="d1">"Researchers", "geo"</data>
+      <data key="d2">b8802394e7024d190407cc65dbfbb85a</data>
+    </node>
+    <node id="&quot;TIBETAN PLATEAU&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"The Tibetan Plateau is a geographical location where research is being conducted regarding the impacts of grazing activity on nitrous oxide emission rates and soil and plant characteristics.")("entity"</data>
+      <data key="d2">fcf85eb6d27dbfd0e3046b3840998e82</data>
+    </node>
+    <node id="&quot;HIGH ARCTIC&quot;">
+      <data key="d0">"GEO"</data>
+      <data key="d1">"The High Arctic refers to a geographical region where the largest observed and anticipated changes in snow cover due to climate change are occurring.")("entity"</data>
+      <data key="d2">a8ca2ec180423cd9af9088a186acbe69</data>
+    </node>
+    <node id="&quot;ALTERED PRECIPITATION&quot;">
+      <data key="d0">"EVENT", "ENTITY"</data>
+      <data key="d1">"Soil Microbial Community Compositions"</data>
+      <data key="d2">399d89b9f3769dc352648e7ae2e184bd</data>
+    </node>
+    <node id="&quot;UNCERTAINTIES&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Uncertainties refer to doubts or questions that need to be addressed for more accurate climate prediction.")("entity"</data>
+      <data key="d2">0c2c584c61d13dbdd826925691951e87</data>
+    </node>
+    <node id="&quot;GLOBAL CHANGE DRIVERS&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Global Change Drivers refers to various factors causing changes in the Earth's environment.")("entity"</data>
+      <data key="d2">56ffdda58d66d298eb1150c7fed7b4bc</data>
+    </node>
+    <node id="&quot;UNITED NATIONS&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The United Nations is an international organization that plays a significant role in the event.")("entity"</data>
+      <data key="d2">d4dce1e40cd53e469babf810f36dc65d</data>
+    </node>
+    <node id="&quot;GRASSLAND MANAGEMENT RESEARCH&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Grassland Management Research" refers to the research topic being investigated.)("entity"</data>
+      <data key="d2">d1d05d54142d158a5d0d2b9cc0bb8df0</data>
+    </node>
+    <node id="&quot;RESEARCH ACADEMY OF ENVIRONMENTAL SCIENCES&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"The Research Academy of Environmental Sciences is an organization that conducts research related to environmental sciences."</data>
+      <data key="d2">a1faf16086ea802a7a82e30052765e7b</data>
+    </node>
+    <node id="&quot;ANALYSIS&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"The analysis is an event that examines the effectiveness of behavioral interventions.")("entity"</data>
+      <data key="d2">287149760db1e6bc159c2d55fcbece3f</data>
+    </node>
+    <node id="&quot;RECOVERY&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"Recovery refers to the process of recovering from a loss, in this case, the initial SOC (Soil Organic Carbon) losses.")   ("entity"</data>
+      <data key="d2">03febae43ad6c2a1f5bfbbc0d8dfb94b</data>
+    </node>
+    <node id="&quot;FILLED&quot;">
+      <data key="d0">"EVENT"</data>
+      <data key="d1">"filled" refers to an action that has completed a task, in this case, filling gaps in previous meta-analyses.)("entity"</data>
+      <data key="d2">15abba83ad5833a3862adef75f906197</data>
+    </node>
+    <node id="&quot;CHINESE AGRICULTURE&quot;">
+      <data key="d0">"ORGANIZATION"</data>
+      <data key="d1">"Chinese Agriculture is the context where research on greenhouse gas emissions, soil organic carbon sequestration, and economic return is being conducted.")("entity"</data>
+      <data key="d2">bc2bf3fcb33f892e6f6ed019178cc2c9</data>
+    </node>
+    <edge source="&quot;NO TILLAGE&quot;" target="&quot;SOIL ORGANIC CARBON&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The impact of no tillage on soil organic carbon is being compared."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;NO TILLAGE&quot;" target="&quot;TOTAL NITROGEN&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The impact of no tillage on total nitrogen is being compared."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;NO TILLAGE&quot;" target="&quot;CONVENTIONAL TILLAGE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The comparison between no tillage and conventional tillage is being made in agricultural soils."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON&quot;" target="&quot;CONVENTIONAL TILLAGE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The impact of conventional tillage on soil organic carbon is being compared."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON&quot;" target="&quot;AGRICULTURAL SOILS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Agricultural soils are the location where soil organic carbon storage and dynamics are being studied."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON&quot;" target="&quot;COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The common rice field water-saving irrigation practices have an effect on soil organic carbon."</data>
+      <data key="d6">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON&quot;" target="&quot;CONVERSION OF GRASSLAND TO AGRICULTURE LAND&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The effects on soil organic carbon are likely related to the conversion of grassland to agriculture land."</data>
+      <data key="d6">daed873fae3887689e300148cfd786af</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON&quot;" target="&quot;LAND-USE CHANGES&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Land-use changes, such as converting grassland to agriculture, can impact soil organic carbon levels."</data>
+      <data key="d6">daed873fae3887689e300148cfd786af</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON&quot;" target="&quot;WORLDWIDE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Soil organic carbon levels can be affected by land-use changes that occur worldwide."</data>
+      <data key="d6">daed873fae3887689e300148cfd786af</data>
+    </edge>
+    <edge source="&quot;CONVENTIONAL TILLAGE&quot;" target="&quot;TOTAL NITROGEN&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The impact of conventional tillage on total nitrogen is being compared."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;TOTAL NITROGEN&quot;" target="&quot;AGRICULTURAL SOILS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Agricultural soils are the location where total nitrogen storage and dynamics are being studied."</data>
+      <data key="d6">d25d55e1aca9c9d4a6b977053fb1a429</data>
+    </edge>
+    <edge source="&quot;AGRICULTURAL SOILS&quot;" target="&quot;REVERSION TO PERENNIAL BIOMASS CROPS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Reversion to perennial biomass crops is being implemented in agricultural soils."</data>
+      <data key="d6">987a5c17a58766ab7b82d4ab4ea7ecc7</data>
+    </edge>
+    <edge source="&quot;COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES&quot;" target="&quot;GREENHOUSE GAS EMISSIONS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The common rice field water-saving irrigation practices have an effect on greenhouse gas emissions."</data>
+      <data key="d6">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </edge>
+    <edge source="&quot;COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES&quot;" target="&quot;TRADE-OFFS BETWEEN WATER SAVINGS AND OTHER ECOSYSTEM SERVICES&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The common rice field water-saving irrigation practices involve trade-offs between water savings and other ecosystem services."</data>
+      <data key="d6">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </edge>
+    <edge source="&quot;COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES&quot;" target="&quot;ASSESSING THE MORE LONG-TERM EFFECTS OF THESE IRRIGATION PRACTICES&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The assessment of the more long-term effects is related to the common rice field water-saving irrigation practices."</data>
+      <data key="d6">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </edge>
+    <edge source="&quot;GREENHOUSE GAS EMISSIONS&quot;" target="&quot;NON-NATIVE PLANT INVASION&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The impact of non-native plant invasion on greenhouse gas emissions from wetlands is an increase."</data>
+      <data key="d6">07110d5763e07d0f5f4dd938ec1ba1bc</data>
+    </edge>
+    <edge source="&quot;GREENHOUSE GAS EMISSIONS&quot;" target="&quot;CROP RESIDUE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Greenhouse Gas Emissions are also being studied in relation to crop residue removal."</data>
+      <data key="d6">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </edge>
+    <edge source="&quot;ASSESSING THE MORE LONG-TERM EFFECTS OF THESE IRRIGATION PRACTICES&quot;" target="&quot;NEED TO BE DEVELOPED&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The need to develop is related to assessing the more long-term effects of these irrigation practices."</data>
+      <data key="d6">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </edge>
+    <edge source="&quot;REVIEW QUESTION&quot;" target="&quot;EFFECTS OF COMMON RICE FIELD WATER-SAVING IRRIGATION PRACTICES ON SOIL ORGANIC CARBON, AND GREENHOUSE GAS EMISSIONS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The Review Question is about the effects of common rice field water-saving irrigation practices on soil organic carbon, and greenhouse gas emissions."</data>
+      <data key="d6">62be9ce3d6b8bf802c766aa56811e0f1</data>
+    </edge>
+    <edge source="&quot;REVIEW QUESTION&quot;" target="&quot;LATIN AMERICA AND THE CARIBBEAN&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The Review Question pertains to the effectiveness of sustainable production in Latin America and the Caribbean in reducing greenhouse gas emissions."</data>
+      <data key="d6">7bf7b322086a378d521f2909d67e7c1b</data>
+    </edge>
+    <edge source="&quot;REVIEW QUESTION&quot;" target="&quot;GLOBAL RUMINANT AGRICULTURE SYSTEMS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The Review Question is about the effects of different management strategies on methane emissions from global ruminant agriculture systems, highlighting their relevance."</data>
+      <data key="d6">141a097966948d2537f728192ba3b0cb</data>
+    </edge>
+    <edge source="&quot;FAO&quot;" target="&quot;CROP RESIDUE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"FAO is conducting a study on the impact of crop residue removal."</data>
+      <data key="d6">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </edge>
+    <edge source="&quot;CHINA&quot;" target="&quot;LONG-TERM (&#8805;20 YEARS)&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The study on long-term effects of fertilizer application and straw return on soil carbon storage in croplands is conducted in China."</data>
+      <data key="d6">1bb5cfc46b43ea1f79209969648d8950</data>
+    </edge>
+    <edge source="&quot;OCEAN ACIDIFICATION&quot;" target="&quot;FISH BEHAVIOR&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The effect of Ocean Acidification on Fish Behavior is being investigated."</data>
+      <data key="d6">321192cace848cb809b3b898d65b49af</data>
+    </edge>
+    <edge source="&quot;LAND-USE CHANGES&quot;" target="&quot;WORLDWIDE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Land-use changes occur on a global scale due to human activities."</data>
+      <data key="d6">daed873fae3887689e300148cfd786af</data>
+    </edge>
+    <edge source="&quot;REVERSION TO PERENNIAL BIOMASS CROPS&quot;" target="&quot;CARBON AND NITROGEN STORAGE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The effect of reversion to perennial biomass crops on carbon and nitrogen storage in agricultural soils is being studied."</data>
+      <data key="d6">987a5c17a58766ab7b82d4ab4ea7ecc7</data>
+    </edge>
+    <edge source="&quot;ON THE URBAN MICROCLIMATE OF TROPICAL AREAS&quot;" target="&quot;TROPICAL AREAS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The event is related to the geographical area 'tropical areas'."</data>
+      <data key="d6">e368b075661f150e1649d24ba6eb7245</data>
+    </edge>
+    <edge source="&quot;ON THE URBAN MICROCLIMATE OF TROPICAL AREAS&quot;" target="&quot;URBAN MICROCLIMATE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The event is about understanding the concept 'urban microclimate' in relation to 'tropical areas'."</data>
+      <data key="d6">e368b075661f150e1649d24ba6eb7245</data>
+    </edge>
+    <edge source="&quot;NOT SPECIFIED&quot;" target="&quot;SOIL&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The discussion is about soil methane and nitrous oxide fluxes."</data>
+      <data key="d6">0c3a6c6bc301d3044d37b492ad56d6d3</data>
+    </edge>
+    <edge source="&quot;MOREOVER&quot;" target="&quot;NEED&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Moreover" indicates a continuation or addition to the need for exploring creative ways of incentivizing the adoption of promising combinations of management and technological options.</data>
+      <data key="d6">7bf7b322086a378d521f2909d67e7c1b</data>
+    </edge>
+    <edge source="&quot;ADOPTION OF PROMISING COMBINATIONS OF MANAGEMENT AND TECHNOLOGICAL OPTIONS&quot;" target="&quot;LATIN AMERICA AND THE CARIBBEAN&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The adoption of promising combinations of management and technological options is being implemented and evaluated in Latin America and the Caribbean."</data>
+      <data key="d6">7bf7b322086a378d521f2909d67e7c1b</data>
+    </edge>
+    <edge source="&quot;LATIN AMERICA AND THE CARIBBEAN&quot;" target="&quot;REDUCING GREENHOUSE GAS EMISSIONS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Reducing greenhouse gas emissions is a goal that is being pursued in Latin America and the Caribbean."</data>
+      <data key="d6">7bf7b322086a378d521f2909d67e7c1b</data>
+    </edge>
+    <edge source="&quot;AFFORESTATION&quot;" target="&quot;SOIL ORGANIC CARBON AND NITROGEN STOCKS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Afforestation can impact the amount of soil organic carbon and nitrogen stocks in arid and semi-arid regions."</data>
+      <data key="d6">fa71a76e544e0945259055677bbe9c34</data>
+    </edge>
+    <edge source="&quot;AFFORESTATION&quot;" target="&quot;ARID AND SEMI-ARID REGIONS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Afforestation is carried out in arid and semi-arid regions, where it can influence soil organic carbon and nitrogen stocks."</data>
+      <data key="d6">fa71a76e544e0945259055677bbe9c34</data>
+    </edge>
+    <edge source="&quot;COMBINED TEMPERATURE AND PRECIPITATION INCREASE&quot;" target="&quot;SOIL GREENHOUSE GAS FLUXES&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The impact of combined temperature and precipitation increase on soil greenhouse gas fluxes."</data>
+      <data key="d6">745c5780aa3fa85db35629f76114ec17</data>
+    </edge>
+    <edge source="&quot;LAND USE CONVERSION&quot;" target="&quot;SOIL GREENHOUSE GAS FLUX&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The effects of Land Use Conversion on Soil Greenhouse Gas Flux are not specified in the text."</data>
+      <data key="d6">7be1e924a1284466fe6d5866bd21a6a6</data>
+    </edge>
+    <edge source="&quot;SOIL ORGANIC CARBON SEQUESTRATION&quot;" target="&quot;BIOLOGICAL SOIL CRUST ESTABLISHMENT&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The establishment of Biological Soil Crust influences the process of Soil Organic Carbon Sequestration in drylands."</data>
+      <data key="d6">2693a561ab31d43814daf56b3226d5f8</data>
+    </edge>
+    <edge source="&quot;HIGH-INCOME COUNTRIES&quot;" target="&quot;ENTERIC CH4 EMISSIONS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"High-income countries could meet their contributions due to a minor projected increase in enteric CH4 emissions, indicating the effect of management strategies on these emissions."</data>
+      <data key="d6">141a097966948d2537f728192ba3b0cb</data>
+    </edge>
+    <edge source="&quot;EVENT&quot;" target="&quot;ORGANIZATION/PERSON&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The organization or person is conducting the research event."</data>
+      <data key="d6">8e40b801b28308601a12691f8bf2b7ca</data>
+    </edge>
+    <edge source="&quot;EVENT&quot;" target="&quot;MAIZE YIELDS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Maize yields are one of the outcomes being studied in the research event."</data>
+      <data key="d6">8e40b801b28308601a12691f8bf2b7ca</data>
+    </edge>
+    <edge source="&quot;EVENT&quot;" target="&quot;NITROGEN USE EFFICIENCY&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Nitrogen use efficiency is one of the outcomes being studied in the research event."</data>
+      <data key="d6">8e40b801b28308601a12691f8bf2b7ca</data>
+    </edge>
+    <edge source="&quot;EVENT&quot;" target="&quot;NITROGEN LOSSES&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Nitrogen losses are one of the outcomes being studied in the research event."</data>
+      <data key="d6">8e40b801b28308601a12691f8bf2b7ca</data>
+    </edge>
+    <edge source="&quot;EVENT&quot;" target="&quot;CARBON EMISSIONS&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Carbon emissions are one of the outcomes being studied in the research event."</data>
+      <data key="d6">8e40b801b28308601a12691f8bf2b7ca</data>
+    </edge>
+    <edge source="&quot;EVENT&quot;" target="&quot;SOIL ORGANIC CARBON SEQUESTRATION RATE&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"The soil organic carbon sequestration rate is one of the outcomes being studied in the research event."</data>
+      <data key="d6">8e40b801b28308601a12691f8bf2b7ca</data>
+    </edge>
+    <edge source="&quot;CROP RESIDUE&quot;" target="&quot;CROP PRODUCTIVITY&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Crop Productivity is one aspect being studied in relation to crop residue removal."</data>
+      <data key="d6">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </edge>
+    <edge source="&quot;CROP RESIDUE&quot;" target="&quot;SOIL HEALTH&quot;">
+      <data key="d4">1.0</data>
+      <data key="d5">"Soil Health is another aspect being studied in relation to crop residue removal."</data>
+      <data key="d6">1bb1770e8d4b92e8827eea5f67912f09</data>
+    </edge>
+  </graph>
+</graphml>
